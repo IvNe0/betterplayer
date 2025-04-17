@@ -407,6 +407,9 @@ internal class BetterPlayer(
         drmSessionManager?.let { drmSessionManager ->
             drmSessionManagerProvider = DrmSessionManagerProvider { drmSessionManager }
         }
+        if (drmSessionManagerProvider == null) {
+    drmSessionManagerProvider = DefaultDrmSessionManagerProvider()
+}
         return when (type) {
             C.TYPE_SS -> SsMediaSource.Factory(
                 DefaultSsChunkSource.Factory(mediaDataSourceFactory),
