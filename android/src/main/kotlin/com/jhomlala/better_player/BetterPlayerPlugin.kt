@@ -366,17 +366,17 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
                 removeOtherNotificationListeners()
                 val showNotification = getParameter(dataSource, SHOW_NOTIFICATION_PARAMETER, false)
                 if (showNotification) {
-                    val title = getParameter(dataSource, TITLE_PARAMETER, "")
-                    val author = getParameter(dataSource, AUTHOR_PARAMETER, "")
-                    val imageUrl = getParameter(dataSource, IMAGE_URL_PARAMETER, "")
-                    val notificationChannelName =
-                        getParameter<String?>(dataSource, NOTIFICATION_CHANNEL_NAME_PARAMETER, null)
-                    val activityName =
-                        getParameter(dataSource, ACTIVITY_NAME_PARAMETER, "MainActivity")
-                    betterPlayer.setupPlayerNotification(
-                        flutterState?.applicationContext!!,
-                        title, author, imageUrl, notificationChannelName, activityName
-                    )
+                    // val title = getParameter(dataSource, TITLE_PARAMETER, "")
+                    // val author = getParameter(dataSource, AUTHOR_PARAMETER, "")
+                    // val imageUrl = getParameter(dataSource, IMAGE_URL_PARAMETER, "")
+                    // val notificationChannelName =
+                    //     getParameter<String?>(dataSource, NOTIFICATION_CHANNEL_NAME_PARAMETER, null)
+                    // val activityName =
+                    //     getParameter(dataSource, ACTIVITY_NAME_PARAMETER, "MainActivity")
+                    // betterPlayer.setupPlayerNotification(
+                    //     flutterState?.applicationContext!!,
+                    //     title, author, imageUrl, notificationChannelName, activityName
+                    // )
                 }
             }
         } catch (exception: Exception) {
