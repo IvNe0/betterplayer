@@ -406,8 +406,7 @@ internal class BetterPlayer(
         val drmProvider = drmSessionManager?.let {
     DrmSessionManagerProvider { it }
 } ?: DefaultDrmSessionManagerProvider()
-        if (drmSessionManagerProvider == null) {
-    drmSessionManagerProvider = DefaultDrmSessionManagerProvider()
+    
 }
         return when (type) {
             C.TYPE_SS -> SsMediaSource.Factory(
