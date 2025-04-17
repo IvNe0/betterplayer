@@ -399,7 +399,7 @@ internal class BetterPlayer(
 
     val drmProvider: DrmSessionManagerProvider = drmSessionManager?.let {
         DrmSessionManagerProvider { it }
-    } ?: DefaultDrmSessionManagerProvider()  // <-- ВАЖНО
+    } ?: DefaultDrmSessionManagerProvider()
 
     val factory = when (type) {
         C.TYPE_SS -> SsMediaSource.Factory(
@@ -418,9 +418,11 @@ internal class BetterPlayer(
         else -> throw IllegalStateException("Unsupported type: $type")
     }
 
-    return factory.setDrmSessionManagerProvider(drmProvider)  // <-- ЗАМЕНА ЗДЕСЬ
+    return factory
+        .setDrmSessionManagerProvider(drmProvider)
         .createMediaSource(mediaItem)
 }
+
     private fun setupVideoPlayer(
         eventChannel: EventChannel, textureEntry: SurfaceTextureEntry, result: MethodChannel.Result
     ) {
