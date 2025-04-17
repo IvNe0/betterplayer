@@ -407,7 +407,6 @@ internal class BetterPlayer(
     DrmSessionManagerProvider { it }
 } ?: DefaultDrmSessionManagerProvider()
     
-}
         return when (type) {
             C.TYPE_SS -> SsMediaSource.Factory(
                 DefaultSsChunkSource.Factory(mediaDataSourceFactory),
